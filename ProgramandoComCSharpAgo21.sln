@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo01.Sintaxe", "CSharp.Capitulo01.Sintaxe\CSharp.Capitulo01.Sintaxe.csproj", "{CDBAE408-5D5B-447F-9D15-BA63F4166ED6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo01.ValeTransporte", "CSharp.Capitulo01.ValeTransporte\CSharp.Capitulo01.ValeTransporte.csproj", "{6BBCF59B-317E-4DF9-966E-CE4272E9917D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CDBAE408-5D5B-447F-9D15-BA63F4166ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDBAE408-5D5B-447F-9D15-BA63F4166ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDBAE408-5D5B-447F-9D15-BA63F4166ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBCF59B-317E-4DF9-966E-CE4272E9917D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBCF59B-317E-4DF9-966E-CE4272E9917D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBCF59B-317E-4DF9-966E-CE4272E9917D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBCF59B-317E-4DF9-966E-CE4272E9917D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
