@@ -39,6 +39,8 @@ namespace CSharp.Capitulo01.ValeTransporte
             Console.Clear();
 
             goto Inicio;
+
+            // Todo: trocar o goto por uma estrutura de repetição.
         }
     }
 }
