@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.GeradorSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.EstruturasControle.Testes", "CSharp.Capitulo02.EstruturasControle.Testes\CSharp.Capitulo02.EstruturasControle.Testes.csproj", "{39910B55-0263-47D3-80D7-FA5295AE98A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Dominio", "Fintech.Dominio\Fintech.Dominio.csproj", "{24C2ED40-58AC-46F1-B596-E7D7D8705C41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{39910B55-0263-47D3-80D7-FA5295AE98A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39910B55-0263-47D3-80D7-FA5295AE98A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39910B55-0263-47D3-80D7-FA5295AE98A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C2ED40-58AC-46F1-B596-E7D7D8705C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C2ED40-58AC-46F1-B596-E7D7D8705C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C2ED40-58AC-46F1-B596-E7D7D8705C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C2ED40-58AC-46F1-B596-E7D7D8705C41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

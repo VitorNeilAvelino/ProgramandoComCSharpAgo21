@@ -47,5 +47,33 @@ namespace CSharp.Capitulo02.EstruturasControle.Testes
                 Console.WriteLine(i);
             }
         }
+
+        [TestMethod]
+        public void ContinueTeste()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i <= 5)
+                {
+                    continue;
+                }
+
+                Console.WriteLine(i);
+            }
+        }
+
+        [TestMethod]
+        public void BreakTeste()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i > 5)
+                {
+                    break;
+                }
+
+                Console.WriteLine(i);
+            }
+        }
     }
 }
