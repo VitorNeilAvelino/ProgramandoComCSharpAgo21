@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo01.Sintaxe", "CSharp.Capitulo01.Sintaxe\CSharp.Capitulo01.Sintaxe.csproj", "{CDBAE408-5D5B-447F-9D15-BA63F4166ED6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo01.ValeTransporte", "CSharp.Capitulo01.ValeTransporte\CSharp.Capitulo01.ValeTransporte.csproj", "{6BBCF59B-317E-4DF9-966E-CE4272E9917D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Capitulo01.ValeTransporte", "CSharp.Capitulo01.ValeTransporte\CSharp.Capitulo01.ValeTransporte.csproj", "{6BBCF59B-317E-4DF9-966E-CE4272E9917D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.GeradorSenha", "CSharp.Capitulo02.GeradorSenha\CSharp.Capitulo02.GeradorSenha.csproj", "{CDE6E659-B51C-4929-8384-9944D94FFB72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Capitulo02.GeradorSenha", "CSharp.Capitulo02.GeradorSenha\CSharp.Capitulo02.GeradorSenha.csproj", "{CDE6E659-B51C-4929-8384-9944D94FFB72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.EstruturasControle.Testes", "CSharp.Capitulo02.EstruturasControle.Testes\CSharp.Capitulo02.EstruturasControle.Testes.csproj", "{39910B55-0263-47D3-80D7-FA5295AE98A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Capitulo02.EstruturasControle.Testes", "CSharp.Capitulo02.EstruturasControle.Testes\CSharp.Capitulo02.EstruturasControle.Testes.csproj", "{39910B55-0263-47D3-80D7-FA5295AE98A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Dominio", "Fintech.Dominio\Fintech.Dominio.csproj", "{24C2ED40-58AC-46F1-B596-E7D7D8705C41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.Dominio", "Fintech.Dominio\Fintech.Dominio.csproj", "{24C2ED40-58AC-46F1-B596-E7D7D8705C41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Correntista.Wpf", "Fintech.Correntista.Wpf\Fintech.Correntista.Wpf.csproj", "{BB253ED4-E17F-4814-BD43-D4474BE3F32B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{24C2ED40-58AC-46F1-B596-E7D7D8705C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24C2ED40-58AC-46F1-B596-E7D7D8705C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24C2ED40-58AC-46F1-B596-E7D7D8705C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB253ED4-E17F-4814-BD43-D4474BE3F32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB253ED4-E17F-4814-BD43-D4474BE3F32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB253ED4-E17F-4814-BD43-D4474BE3F32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB253ED4-E17F-4814-BD43-D4474BE3F32B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
