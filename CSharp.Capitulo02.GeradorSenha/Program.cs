@@ -23,7 +23,7 @@ namespace CSharp.Capitulo02.GeradorSenha
                 quantidadeDigitos = ObterQuantidadeDigitos();
             } while (quantidadeDigitos == 0);
 
-            var senha = string.Empty; //"";
+            var senha = new Senha(quantidadeDigitos);
             //var randomico = new Random();
 
             //for (int i = 1; i <= quantidadeDigitos; i++)
@@ -32,7 +32,7 @@ namespace CSharp.Capitulo02.GeradorSenha
             //    senha += digito;//*.ToString()*/;
             //}
 
-            Console.WriteLine($"Senha gerada: {senha}");
+            Console.WriteLine($"Senha gerada: {senha.Valor}");
             //Console.ReadKey();
             Environment.Exit(0);
         }
