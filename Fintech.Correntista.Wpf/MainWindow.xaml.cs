@@ -24,6 +24,10 @@ namespace Fintech.Correntista.Wpf
             sexoComboBox.Items.Add(Sexo.Masculino);
             sexoComboBox.Items.Add(Sexo.Outro);
 
+            tipoContaComboBox.Items.Add(TipoConta.ContaCorrente);
+            tipoContaComboBox.Items.Add(TipoConta.ContaEspecial);
+            tipoContaComboBox.Items.Add(TipoConta.Poupanca);
+
             clientesDataGrid.ItemsSource = Clientes;
         }
 
