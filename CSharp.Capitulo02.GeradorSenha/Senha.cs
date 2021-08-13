@@ -24,7 +24,7 @@ namespace CSharp.Capitulo02.GeradorSenha
         public int Tamanho { get; set; } = TamanhoMinimo;
         public string Valor { get; set; }
 
-        private  string GerarSenha()
+        private string GerarSenha()
         {
             var senha = string.Empty; //"";
             var randomico = new Random();
