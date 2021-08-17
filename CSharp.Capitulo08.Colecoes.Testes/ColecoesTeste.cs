@@ -42,5 +42,26 @@ namespace CSharp.Capitulo08.Colecoes.Testes
                 Console.WriteLine($"{inteiros.IndexOf(inteiro)}: {inteiro}");
             }
         }
+
+        [TestMethod]
+        public void DictionaryTeste()
+        {
+            var feriados = new Dictionary<DateTime, string>();
+
+            feriados.Add(Convert.ToDateTime("25/12/2021"), "Natal");
+            feriados.Add(new DateTime(2021, 01, 01), "Ano Novo");
+            feriados.Add(new DateTime(2021, 4, 21), "Tiradentes");
+            //feriados.Add(new DateTime(2021, 4, 21), "Proclamação da República");
+
+            var natal = feriados[new DateTime(2021, 12, 25)];
+
+            foreach (var feriado in feriados.OrderBy(f => f.Key))
+            {
+                Console.WriteLine($"{feriado.Key.ToShortDateString()}: {feriado.Value}");
+            }
+
+            Console.WriteLine(feriados.ContainsKey(new DateTime(2021, 01, 01)));
+            Console.WriteLine(feriados.ContainsValue("Natal"));
+        }
     }
 }
