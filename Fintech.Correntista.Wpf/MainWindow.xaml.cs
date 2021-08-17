@@ -188,10 +188,24 @@ namespace Fintech.Correntista.Wpf
 
             conta.EfetuarOperacao(valor, operacao);
 
+            AtualizarGridMovimentacao(conta);
+        }
+
+        private void AtualizarGridMovimentacao(Conta conta)
+        {
             movimentacaoDataGrid.ItemsSource = conta.Movimentos;
             movimentacaoDataGrid.Items.Refresh();
 
             saldoTextBox.Text = conta.Saldo.ToString("c");
+        }
+
+        private void contaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (contaComboBox.SelectedIndex == -1) return;
+            
+            var conta = (Conta)contaComboBox.SelectedItem;
+
+            AtualizarGridMovimentacao(conta);
         }
     }
 }
