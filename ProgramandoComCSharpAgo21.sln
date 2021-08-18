@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Capitulo02.GeradorSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.DominioTests", "Fintech.DominioTests\Fintech.DominioTests.csproj", "{6F650120-5610-4627-93B6-24A5F645BC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo08.Colecoes.Testes", "CSharp.Capitulo08.Colecoes.Testes\CSharp.Capitulo08.Colecoes.Testes.csproj", "{2A6F7444-C7FB-4152-8506-03C7A84047C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Capitulo08.Colecoes.Testes", "CSharp.Capitulo08.Colecoes.Testes\CSharp.Capitulo08.Colecoes.Testes.csproj", "{2A6F7444-C7FB-4152-8506-03C7A84047C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Repositorios.SistemaArquivos", "Fintech.Repositorios.SistemaArquivos\Fintech.Repositorios.SistemaArquivos.csproj", "{6C5EC57B-5ECD-4240-9D9B-6F2D2DB0659E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Repositorios.SistemaArquivosTests", "Fintech.Repositorios.SistemaArquivosTests\Fintech.Repositorios.SistemaArquivosTests.csproj", "{4A24C68D-E1FD-493D-992E-1646F194B638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,14 @@ Global
 		{2A6F7444-C7FB-4152-8506-03C7A84047C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A6F7444-C7FB-4152-8506-03C7A84047C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A6F7444-C7FB-4152-8506-03C7A84047C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5EC57B-5ECD-4240-9D9B-6F2D2DB0659E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5EC57B-5ECD-4240-9D9B-6F2D2DB0659E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5EC57B-5ECD-4240-9D9B-6F2D2DB0659E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5EC57B-5ECD-4240-9D9B-6F2D2DB0659E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A24C68D-E1FD-493D-992E-1646F194B638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A24C68D-E1FD-493D-992E-1646F194B638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A24C68D-E1FD-493D-992E-1646F194B638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A24C68D-E1FD-493D-992E-1646F194B638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +85,8 @@ Global
 		{24C2ED40-58AC-46F1-B596-E7D7D8705C41} = {4B9A13F5-F54A-4FE5-889C-1D95145F3741}
 		{BB253ED4-E17F-4814-BD43-D4474BE3F32B} = {4B9A13F5-F54A-4FE5-889C-1D95145F3741}
 		{6F650120-5610-4627-93B6-24A5F645BC2A} = {4B9A13F5-F54A-4FE5-889C-1D95145F3741}
+		{6C5EC57B-5ECD-4240-9D9B-6F2D2DB0659E} = {4B9A13F5-F54A-4FE5-889C-1D95145F3741}
+		{4A24C68D-E1FD-493D-992E-1646F194B638} = {4B9A13F5-F54A-4FE5-889C-1D95145F3741}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8313DEE-AF47-40C4-AACC-50431982EC95}

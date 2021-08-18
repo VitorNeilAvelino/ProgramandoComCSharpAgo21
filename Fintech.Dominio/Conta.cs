@@ -19,9 +19,11 @@ namespace Fintech.Dominio
         public Cliente Cliente { get; set; }
         public List<Movimento> Movimentos { get; set; } = new List<Movimento>();
 
-        public virtual void EfetuarOperacao(decimal valor, Operacao operacao)
+        public Movimento EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
         {
             var sucesso = true;
+            //var movimento = new Movimento();
+            Movimento movimento = null;
 
             switch (operacao)
             {
@@ -29,7 +31,7 @@ namespace Fintech.Dominio
                     Saldo += valor;
                     break;
                 case Operacao.Saque:
-                    if (Saldo >= valor)
+                    if (Saldo + limite >= valor)
                     {
                         Saldo -= valor;
                     }
@@ -39,8 +41,14 @@ namespace Fintech.Dominio
                     }
                     break;
             }
-            
-            if(sucesso) Movimentos.Add(new Movimento(operacao, valor));
+
+            if (sucesso)
+            {
+                movimento = new Movimento(operacao, valor, this);
+                Movimentos.Add(movimento);
+            }
+
+            return movimento;
         }
     }
 }

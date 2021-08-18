@@ -4,15 +4,16 @@ namespace Fintech.Dominio
 {
     public class Movimento
     {
-        public Movimento(Operacao operacao, decimal valor)
+        public Movimento(Operacao operacao, decimal valor, Conta conta)
         {
             Operacao = operacao;
             Valor = valor;
-            //Data = DateTime.Now;
+            Conta = conta;
         }
 
         public DateTime Data { get; set; } = DateTime.Now;
         public Operacao Operacao { get; set; }
         public decimal Valor { get; set; }
+        public Conta Conta { get; set; }
     }
 }
