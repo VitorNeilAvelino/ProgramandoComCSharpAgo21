@@ -14,6 +14,7 @@ namespace Fintech.Correntista.Wpf
     {
         public List<Cliente> Clientes { get; set; } = new List<Cliente>();
         public Cliente ClienteSelecionado { get; set; }
+        public Conta ContaSelecionada { get; set; }
 
         public MainWindow()
         {
@@ -177,6 +178,7 @@ namespace Fintech.Correntista.Wpf
 
             contaComboBox.ItemsSource = ClienteSelecionado.Contas;
             contaComboBox.Items.Refresh();
+            contaComboBox.SelectedItem = ContaSelecionada;
 
             operacoesTabItem.Focus();
         }
@@ -189,7 +191,7 @@ namespace Fintech.Correntista.Wpf
 
             var movimento = conta.EfetuarOperacao(valor, operacao);
 
-            var repositorio = new MovimentoRepositorio();
+            var repositorio = new MovimentoRepositorio("Dados\\Movimento.txt");
             repositorio.Inserir(movimento);
 
             AtualizarGridMovimentacao(conta);
@@ -210,6 +212,12 @@ namespace Fintech.Correntista.Wpf
             var conta = (Conta)contaComboBox.SelectedItem;
 
             AtualizarGridMovimentacao(conta);
+        }
+
+        private void ContasClienteSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var comboClicado = (ComboBox)sender;
+            ContaSelecionada = (Conta)comboClicado.SelectedItem;
         }
     }
 }

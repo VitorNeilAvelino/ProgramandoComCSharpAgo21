@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Fintech.Dominio
 {
@@ -18,6 +19,13 @@ namespace Fintech.Dominio
         public Agencia Agencia { get; set; }
         public Cliente Cliente { get; set; }
         public List<Movimento> Movimentos { get; set; } = new List<Movimento>();
+        public decimal TotalDepositos 
+        { 
+            get 
+            {
+                return Movimentos.Where(m => m.Operacao == Operacao.Deposito).Sum(m => m.Valor);
+            } 
+        }
 
         public Movimento EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
         {

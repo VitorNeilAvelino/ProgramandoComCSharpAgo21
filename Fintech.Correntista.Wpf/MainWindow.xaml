@@ -18,7 +18,7 @@
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <ComboBox ItemsSource="{Binding Contas}" DisplayMemberPath="Numero"/>
+                                        <ComboBox ItemsSource="{Binding Contas}" DisplayMemberPath="Numero" SelectionChanged="ContasClienteSelectionChanged"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
