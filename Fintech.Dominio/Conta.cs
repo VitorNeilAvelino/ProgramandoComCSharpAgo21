@@ -15,17 +15,28 @@ namespace Fintech.Dominio
 
         public int Numero { get; set; }
         public string DigitoVerificador { get; set; }
-        public decimal Saldo { get; protected set; }
+        public decimal Saldo
+        {
+            get { return TotalDeposito - TotalSaque; }
+            private set { }
+        }
         public Agencia Agencia { get; set; }
         public Cliente Cliente { get; set; }
         public List<Movimento> Movimentos { get; set; } = new List<Movimento>();
-        public decimal TotalDepositos 
-        { 
-            get 
+        public decimal TotalDeposito
+        {
+            get
             {
                 return Movimentos.Where(m => m.Operacao == Operacao.Deposito).Sum(m => m.Valor);
-            } 
+            }
         }
+        public decimal TotalSaque => Movimentos.Where(m => m.Operacao == Operacao.Saque).Sum(m => m.Valor);
+        //{
+        //    get
+        //    {
+        //        return Movimentos.Where(m => m.Operacao == Operacao.Saque).Sum(m => m.Valor);
+        //    }
+        //}
 
         public Movimento EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
         {

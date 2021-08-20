@@ -41,6 +41,8 @@ namespace Fintech.Repositorios.SistemaArquivos
         {
             var movimentos = new List<Movimento>();
 
+            if (!File.Exists(Caminho)) return movimentos;
+
             foreach (var linha in File.ReadAllLines(Caminho))
             {
                 if (linha.Trim() == string.Empty) continue;

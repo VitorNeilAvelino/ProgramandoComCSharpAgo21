@@ -45,7 +45,10 @@ namespace Fintech.Dominio.Tests
             var saques = conta.Movimentos.Where(m => m.Operacao == Operacao.Saque).Sum(m => m.Valor);
             var qtdSaques = conta.Movimentos.Count(m => m.Operacao == Operacao.Saque);
 
+            //conta.Saldo = 10;
+
             Assert.AreEqual(conta.Saldo, depositos - saques);
+            Assert.AreEqual(conta.Saldo, conta.TotalDeposito - conta.TotalSaque);
             Assert.IsTrue(qtdDepositos == 2);
             Assert.AreEqual(qtdSaques, 3);
 
