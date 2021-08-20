@@ -40,7 +40,7 @@ namespace Fintech.Dominio
 
         public Movimento EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
         {
-            var sucesso = true;
+            //var sucesso = true;
             //var movimento = new Movimento();
             Movimento movimento = null;
 
@@ -56,16 +56,16 @@ namespace Fintech.Dominio
                     }
                     else
                     {
-                        sucesso = false;
+                        throw new SaldoInsuficienteException();
                     }
                     break;
             }
 
-            if (sucesso)
-            {
+            //if (sucesso)
+            //{
                 movimento = new Movimento(operacao, valor, this);
                 Movimentos.Add(movimento);
-            }
+            //}
 
             return movimento;
         }

@@ -2,6 +2,7 @@
 using Fintech.Repositorios.SistemaArquivos;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -186,15 +187,39 @@ namespace Fintech.Correntista.Wpf
 
         private void incluirOperacaoButton_Click(object sender, RoutedEventArgs e)
         {
-            var conta = (Conta)contaComboBox.SelectedItem;
-            var operacao = (Operacao)operacaoComboBox.SelectedItem;
-            var valor = Convert.ToDecimal(valorTextBox.Text);
+            try
+            {
+                var conta = (Conta)contaComboBox.SelectedItem;
+                var operacao = (Operacao)operacaoComboBox.SelectedItem;
+                var valor = Convert.ToDecimal(valorTextBox.Text);
 
-            var movimento = conta.EfetuarOperacao(valor, operacao);
-                        
-            repositorio.Inserir(movimento);
+                var movimento = conta.EfetuarOperacao(valor, operacao);
 
-            AtualizarGridMovimentacao(conta);
+                repositorio.Inserir(movimento);
+
+                AtualizarGridMovimentacao(conta);
+            }
+            catch (FileNotFoundException excecao)
+            {
+                MessageBox.Show($"O arquivo {excecao.FileName} não foi encontrado.");
+            }
+            catch (DirectoryNotFoundException)
+            {
+                MessageBox.Show($"O diretório {Properties.Settings.Default.CaminhoArquivoMovimento} não foi encontrado.");
+            }
+            catch (SaldoInsuficienteException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eita! Alguma coisa deu errado e já estamos tomando providências.");
+                //Logar(ex); // log4net
+            }
+            //finally
+            //{
+            //    // É executado sempre, independente de erro ou sucesso, mesmo se houver um return no código.
+            //}
         }
 
         private void AtualizarGridMovimentacao(Conta conta)
