@@ -1,10 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fintech.Dominio;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fintech.Dominio.Tests
 {
@@ -29,8 +25,15 @@ namespace Fintech.Dominio.Tests
             conta.EfetuarOperacao(990, Operacao.Saque);
             Assert.IsTrue(conta.Saldo == -1000);
 
-            conta.EfetuarOperacao(10, Operacao.Saque);
-            Assert.IsTrue(conta.Saldo == -1000);
+            try
+            {
+                conta.EfetuarOperacao(10, Operacao.Saque);
+                Assert.IsTrue(conta.Saldo == -1000);
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(SaldoInsuficienteException));
+            }
 
             conta.EfetuarOperacao(1000, Operacao.Deposito);
             Assert.IsTrue(conta.Saldo == 0);

@@ -13,7 +13,7 @@ namespace Fintech.Correntista.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MovimentoRepositorio repositorio = new (Properties.Settings.Default.CaminhoArquivoMovimento);
+        private MovimentoRepositorio repositorio = new (Properties.Settings.Default.CaminhoArquivoMovimento); // "Dados\\Movimento.txt"
         public List<Cliente> Clientes { get; set; } = new List<Cliente>();
         public Cliente ClienteSelecionado { get; set; }
         public Conta ContaSelecionada { get; set; }
@@ -230,15 +230,19 @@ namespace Fintech.Correntista.Wpf
             saldoTextBox.Text = conta.Saldo.ToString("c");
         }
 
-        private void contaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void contaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (contaComboBox.SelectedIndex == -1) return;
-            
+
+            mainSpinner.Visibility = Visibility.Visible;
+
             var conta = (Conta)contaComboBox.SelectedItem;
 
-            conta.Movimentos = repositorio.Selecionar(conta.Agencia.Numero, conta.Numero);
+            conta.Movimentos = await repositorio.SelecionarAsync(conta.Agencia.Numero, conta.Numero);
 
             AtualizarGridMovimentacao(conta);
+
+            mainSpinner.Visibility = Visibility.Hidden;
         }
 
         private void ContasClienteSelectionChanged(object sender, SelectionChangedEventArgs e)
