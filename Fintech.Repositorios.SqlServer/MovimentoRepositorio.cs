@@ -27,7 +27,7 @@ namespace Fintech.Repositorios.SqlServer
             var instrucao = @$"Insert Movimento(IdConta, Data, Valor, Operacao)
                                             values({movimento.Conta.Numero}, @Data, @Valor, @Operacao)";
 
-            using (var conexao = new SqlConnection(stringConexao))
+            using (var conexao = new SqlConnection(stringConexao)) // descarte seguro de memória.
             {
                 conexao.Execute(instrucao, movimento);
             }
