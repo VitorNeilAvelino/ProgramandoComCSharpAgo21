@@ -31,5 +31,15 @@ namespace Fintech.Correntista.Wpf.Properties {
                 return ((string)(this["CaminhoArquivoMovimento"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Fintech;Integrated Security=Tr" +
+            "ue")]
+        public string StringConexao {
+            get {
+                return ((string)(this["StringConexao"]));
+            }
+        }
     }
 }
