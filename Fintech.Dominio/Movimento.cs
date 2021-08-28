@@ -21,6 +21,7 @@ namespace Fintech.Dominio
             Conta = conta;
         }
 
+        public int Id { get; set; }
         public Guid Guid { get; set; } = Guid.NewGuid();
         public DateTime Data { get; set; } = DateTime.Now;
         public Operacao Operacao { get; set; }

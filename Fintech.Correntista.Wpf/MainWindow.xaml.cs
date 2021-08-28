@@ -17,7 +17,7 @@ namespace Fintech.Correntista.Wpf
         //private MovimentoRepositorio repositorio = new (Properties.Settings.Default.CaminhoArquivoMovimento); // "Dados\\Movimento.txt"
         private MovimentoRepositorio repositorio = new (Properties.Settings.Default.StringConexao); // "Dados\\Movimento.txt"
         public List<Cliente> Clientes { get; set; } = new List<Cliente>();
-        public Cliente ClienteSelecionado { get; set; }
+        private Cliente clienteSelecionado;// { get; set; }
         public Conta ContaSelecionada { get; set; }
 
         public MainWindow()
@@ -97,7 +97,8 @@ namespace Fintech.Correntista.Wpf
         {
             SelecionarCliente(sender);
 
-            clienteTextBox.Text = $"{ClienteSelecionado.Nome} - {ClienteSelecionado.Cpf}";
+            //clienteTextBox.Text = $"{ClienteSelecionado.Nome} - {ClienteSelecionado.Cpf}";
+            clienteTextBox.Text = clienteSelecionado.ToString();
 
             contasTabItem.Focus();
         }
@@ -107,7 +108,7 @@ namespace Fintech.Correntista.Wpf
             var botaoClicado = (Button)sender;
             var clienteSelecionado = botaoClicado.DataContext;
 
-            ClienteSelecionado = (Cliente)clienteSelecionado;
+            this.clienteSelecionado = (Cliente)clienteSelecionado;
         }
 
         private void TipoContaComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -153,7 +154,7 @@ namespace Fintech.Correntista.Wpf
                     break;
             }
 
-            ClienteSelecionado.Contas.Add(conta);
+            clienteSelecionado.Contas.Add(conta);
 
             MessageBox.Show("Conta adicionada com sucesso.");
             LimparControlesConta();
@@ -178,9 +179,9 @@ namespace Fintech.Correntista.Wpf
         {
             SelecionarCliente(sender);
 
-            contaTextBox.Text = $"{ClienteSelecionado.Nome} - {ClienteSelecionado.Cpf}";
+            contaTextBox.Text = $"{clienteSelecionado.Nome} - {clienteSelecionado.Cpf}";
 
-            contaComboBox.ItemsSource = ClienteSelecionado.Contas;
+            contaComboBox.ItemsSource = clienteSelecionado.Contas;
             contaComboBox.Items.Refresh();
             contaComboBox.SelectedItem = ContaSelecionada;
 

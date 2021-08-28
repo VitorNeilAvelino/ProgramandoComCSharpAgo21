@@ -13,7 +13,7 @@ namespace CSharp.Capitulo02.EstruturasControle.Testes
             {
                 for (int j = 1; j <= 10; j++)
                 {
-                    Console.WriteLine($"{i} * {j} = {i * j}");                
+                    Console.WriteLine($"{i} * {j} = {i * j}");
                 }
                 Console.WriteLine(new string('-', 50));
             }
@@ -22,7 +22,7 @@ namespace CSharp.Capitulo02.EstruturasControle.Testes
         [TestMethod]
         public void EstruturaForTeste()
         {
-            var i = 1;
+            int i = 1;
 
             for (Console.WriteLine("Iniciou"); i <= 3; Console.WriteLine(++i/*++*/))
             {
