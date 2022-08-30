@@ -19,7 +19,22 @@ namespace Fintech.Repositorios.SqlServer
 
         public void Atualizar(Movimento movimento)
         {
-            throw new NotImplementedException();
+            var instrucao = @$"Update Movimento
+                                         set Data = @Data, 
+                                              Valor = @Valor, 
+                                              Operacao = @Operacao
+                                         where Id = @Id";
+
+            using var conexao = new SqlConnection(stringConexao);
+            conexao.Execute(instrucao, movimento);
+        }        
+
+        public void Excluir(int id)
+        {
+            var instrucao = @$"Delete Movimento where Id = @Id";
+
+            using var conexao = new SqlConnection(stringConexao);
+            conexao.Execute(instrucao, new { Id = id });
         }
 
         public void Inserir(Movimento movimento)
@@ -35,7 +50,7 @@ namespace Fintech.Repositorios.SqlServer
 
         public List<Movimento> Selecionar(int numeroAgencia, int numeroConta)
         {
-            var instrucao = @"Select Data, Operacao, Valor from Movimento
+            var instrucao = @"Select Id, Data, Operacao, Valor from Movimento
                                         where IdConta=@numeroConta";
 
             using (var conexao = new SqlConnection(stringConexao))
@@ -46,7 +61,7 @@ namespace Fintech.Repositorios.SqlServer
 
         public async Task<List<Movimento>> SelecionarAsync(int numeroAgencia, int numeroConta)
         {
-            var instrucao = @"Select Data, Operacao, Valor from Movimento
+            var instrucao = @"Select Id, Data, Operacao, Valor from Movimento
                                         where IdConta=@numeroConta";
 
             using (var conexao = new SqlConnection(stringConexao))
